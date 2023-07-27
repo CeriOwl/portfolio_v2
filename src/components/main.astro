@@ -1,0 +1,48 @@
+---
+import CardSkill from "./Card_Skill.astro";
+const technologies: string[] = [
+  "html",
+  "css",
+  "js",
+  "mysql",
+  "postgre",
+  "node"
+]
+
+interface Card {
+  title: string,
+  description: string
+}
+
+const cards_info: Card[] = [
+  {
+    title: "Frontend Development",
+    description: "Using HTML, CSS and Javacript with"
+  }
+]
+---
+
+<main>
+  <section class="relative z-10 max-w-5xl mx-auto flex flex-col items-center mt-10 mb-36">
+    <img class="w-60 rounded-full border-2 border-neutral-800 p-2" src="/min.jpg" alt=""/>
+    <p class="text-slate-300 font-light text-sm py-2">Hi, I'm Alex👋</p>
+    <h1 class="text-slate-200 font-extrabold text-5xl max-w-lg text-center py-2 leading-tight">Web Developer and Designer Enthusiastic</h1>
+    <button class="text-slate-300 hover:text-slate-50 border py-4 px-10 mt-10 font-light box-border hover:bg-neutral-900">See my projects</button>
+  </section>
+  <section class="relative z-10 bg-neutral-800/40 py-10 px-20 border-y border-y-neutral-700 mb-20">
+    <h2 class="text-slate-300 text-center font-light text-xl">Technologies I use</h2>
+    <div class="flex justify-between mt-9">
+      {
+        technologies.map(data => <img class="w-32 grayscale" src={`/${data}.png`}/>)
+      }
+    </div>
+  </section>
+  <section class="relative z-10">
+    <h2>What can I do?</h2>
+    <div>
+      {
+        cards_info.map(card => <CardSkill name={card.title}></CardSkill>)
+      }
+    </div>
+  </section>
+</main>

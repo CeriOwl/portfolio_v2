@@ -1,75 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BackgroundAnimated from "../layouts/Background-animated.astro";
-
-interface Link {
-  name: string;
-  link: string;
-}
-
-const data_links: Link[] = [
-  {
-    name: "LinkedIn",
-    link: "http://",
-  },
-  {
-    name: "GitHub",
-    link: "http://",
-  },
-];
+import Header from "../components/header.astro";
+import Main from "../components/main.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <header
-    class="relative z-10 border-b border-slate-200 flex justify-between py-4 max-w-5xl mx-auto"
-  >
-    <div class="flex items-center gap-x-4">
-      <div class="border-2 rounded-full border-slate-200 p-4 gradient">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-5 text-slate-200"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-          ></path>
-        </svg>
-      </div>
-      <span class="text-slate-200 font-mono text-xs"
-        >alejandro.camacho.olivares@gmail.com</span
-      >
-    </div>
-    <nav class="flex items-center">
-      <ul class="flex">
-        {
-          data_links.map((data) => (
-            <li>
-              <a class="text-slate-200" href="#">
-                {data.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </header>
+<Layout title="Alex's Portfolio">
+  <Header></Header>
+  <Main></Main>
   <BackgroundAnimated />
 </Layout>
-<style>
-  .gradient {
-    background: hsla(0, 0%, 14%, 1);
-
-	background: radial-gradient(circle, hsla(0, 0%, 14%, 1) 40%, hsla(0, 0%, 22%, 1) 89%);
-
-	background: -moz-radial-gradient(circle, hsla(0, 0%, 14%, 1) 40%, hsla(0, 0%, 22%, 1) 89%);
-
-	background: -webkit-radial-gradient(circle, hsla(0, 0%, 14%, 1) 40%, hsla(0, 0%, 22%, 1) 89%);
-
-	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#232323", endColorstr="#383838", GradientType=1 );
-  }
-</style>
