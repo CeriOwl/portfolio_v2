@@ -1,5 +1,5 @@
 ---
-import CardSkill from "./Card_Skill.astro";
+import Skills from "./Skills.astro"
 const technologies: string[] = [
   "html",
   "css",
@@ -9,15 +9,49 @@ const technologies: string[] = [
   "node"
 ]
 
-interface Card {
+interface Skill {
   title: string,
-  description: string
+  skills: string[]
 }
 
-const cards_info: Card[] = [
+const skills_info: Skill[] = [
   {
-    title: "Frontend Development",
-    description: "Using HTML, CSS and Javacript with"
+    title: "languages",
+    skills: [
+      "HTML",
+      "CSS",
+      "Javascript (ES6)",
+      "SQL",
+      "Python"
+    ]
+  },
+  {
+    title: "frameworks",
+    skills: [
+      "astro",
+      "react",
+      "wordpress",
+      "node js",
+      "express js"
+    ]
+  },
+  {
+    title: "tools",
+    skills: [
+      "Git & Github",
+      "Chrome DevTools",
+      "PostgreSQL",
+      "MySQL",
+      "Linux"
+    ]
+  },
+  {
+    title: "design",
+    skills: [
+      "figma",
+      "adobe photoshop",
+      "canva"
+    ]
   }
 ]
 ---
@@ -29,7 +63,7 @@ const cards_info: Card[] = [
     <h1 class="text-slate-200 font-extrabold text-5xl max-w-lg text-center py-2 leading-tight">Web Developer and Designer Enthusiastic</h1>
     <button class="text-slate-300 hover:text-slate-50 border py-4 px-10 mt-10 font-light box-border hover:bg-neutral-900">See my projects</button>
   </section>
-  <section class="relative z-10 bg-neutral-800/40 py-10 px-20 border-y border-y-neutral-700 mb-20">
+  <section class="relative z-10 bg-neutral-800/40 py-10 px-20 border-y border-y-neutral-700">
     <h2 class="text-slate-300 text-center font-light text-xl">Technologies I use</h2>
     <div class="flex justify-between mt-9">
       {
@@ -37,12 +71,16 @@ const cards_info: Card[] = [
       }
     </div>
   </section>
-  <section class="relative z-10">
-    <h2>What can I do?</h2>
-    <div>
+  <section class="relative z-10 max-w-5xl mx-auto my-36">
+    <h2 class="text-slate-200 font-extrabold text-5xl text-center py-2">Skills</h2>
+    <div class="flex justify-between mt-10">
       {
-        cards_info.map(card => <CardSkill name={card.title}></CardSkill>)
+        skills_info.map(data => <Skills title={data.title} skills={data.skills}></Skills>)
       }
     </div>
+  </section>
+  <section class="relative z-10 max-w-5xl mx-auto flex flex-col items-center border-t border-slate-200 py-20">
+    <h2 class="text-slate-200 font-extrabold text-5xl text-center py-2">Tell me about your next project</h2>
+    <button class="text-slate-300 hover:text-slate-50 border py-4 px-10 mt-10 font-light box-border hover:bg-neutral-900">Contact me</button>
   </section>
 </main>
