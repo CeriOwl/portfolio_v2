@@ -1,86 +1,13 @@
 ---
-import Skills from "./Skills.astro"
-const technologies: string[] = [
-  "html",
-  "css",
-  "js",
-  "mysql",
-  "postgre",
-  "node"
-]
-
-interface Skill {
-  title: string,
-  skills: string[]
-}
-
-const skills_info: Skill[] = [
-  {
-    title: "languages",
-    skills: [
-      "HTML",
-      "CSS",
-      "Javascript (ES6)",
-      "SQL",
-      "Python"
-    ]
-  },
-  {
-    title: "frameworks",
-    skills: [
-      "astro",
-      "react",
-      "wordpress",
-      "node js",
-      "express js"
-    ]
-  },
-  {
-    title: "tools",
-    skills: [
-      "Git & Github",
-      "Chrome DevTools",
-      "PostgreSQL",
-      "MySQL",
-      "Linux"
-    ]
-  },
-  {
-    title: "design",
-    skills: [
-      "figma",
-      "adobe photoshop",
-      "canva"
-    ]
-  }
-]
+import SkillsSection from "./Skills_section.astro"
+import ContactSection from "./Contact_section.astro"
+import TechnologiesSection from "./Technologies_section.astro";
+import PresentationSection from "./Presentation_section.astro"
 ---
 
 <main>
-  <section class="relative z-10 max-w-5xl mx-auto flex flex-col items-center mt-10 mb-36">
-    <img class="w-60 rounded-full border-2 border-neutral-800 p-2" src="/min.jpg" alt=""/>
-    <p class="text-slate-300 font-light text-sm py-2">Hi, I'm Alex👋</p>
-    <h1 class="text-slate-200 font-extrabold text-5xl max-w-lg text-center py-2 leading-tight">Web Developer and Designer Enthusiastic</h1>
-    <button class="text-slate-300 hover:text-slate-50 border py-4 px-10 mt-10 font-light box-border hover:bg-neutral-900">See my projects</button>
-  </section>
-  <section class="relative z-10 bg-neutral-800/40 py-10 px-20 border-y border-y-neutral-700">
-    <h2 class="text-slate-300 text-center font-light text-xl">Technologies I use</h2>
-    <div class="flex justify-between mt-9">
-      {
-        technologies.map(data => <img class="w-32 grayscale" src={`/${data}.png`}/>)
-      }
-    </div>
-  </section>
-  <section class="relative z-10 max-w-5xl mx-auto my-36">
-    <h2 class="text-slate-200 font-extrabold text-5xl text-center py-2">Skills</h2>
-    <div class="flex justify-between mt-10">
-      {
-        skills_info.map(data => <Skills title={data.title} skills={data.skills}></Skills>)
-      }
-    </div>
-  </section>
-  <section class="relative z-10 max-w-5xl mx-auto flex flex-col items-center border-t border-slate-200 py-20">
-    <h2 class="text-slate-200 font-extrabold text-5xl text-center py-2">Tell me about your next project</h2>
-    <button class="text-slate-300 hover:text-slate-50 border py-4 px-10 mt-10 font-light box-border hover:bg-neutral-900">Contact me</button>
-  </section>
+  <PresentationSection></PresentationSection>
+  <TechnologiesSection></TechnologiesSection>
+  <SkillsSection></SkillsSection>
+  <ContactSection></ContactSection>
 </main>

@@ -1,0 +1,18 @@
+---
+const technologies: string[] = [
+  "html",
+  "css",
+  "js",
+  "mysql",
+  "postgre",
+  "node"
+]
+---
+<section class="relative z-10 bg-neutral-800/40 py-16 px-20 border-y border-y-neutral-700 max-w-screen-2xl max-[330px]:px-10">
+  <h2 class="text-slate-300 text-center font-light text-xl">Technologies I use</h2>
+  <div class="flex justify-between mt-9 max-sm:grid max-sm:grid-cols-2 max-sm:gap-10 max-sm:justify-items-center max-[330px]:flex max-[330px]:flex-col max-[330px]:items-center">
+    {
+      technologies.map(data => <img class="w-32 grayscale" src={`/${data}.png`}/>)
+    }
+  </div>
+</section>

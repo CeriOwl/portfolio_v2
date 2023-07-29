@@ -1,0 +1,57 @@
+---
+import Skills from "./Skills.astro"
+
+interface Skill {
+  title: string,
+  skills: string[]
+}
+
+const skills_info: Skill[] = [
+  {
+    title: "languages",
+    skills: [
+      "HTML",
+      "CSS",
+      "Javascript (ES6)",
+      "SQL",
+      "Python"
+    ]
+  },
+  {
+    title: "frameworks",
+    skills: [
+      "astro",
+      "react",
+      "wordpress",
+      "node js",
+      "express js"
+    ]
+  },
+  {
+    title: "tools",
+    skills: [
+      "Git & Github",
+      "Chrome DevTools",
+      "PostgreSQL",
+      "MySQL",
+      "Linux"
+    ]
+  },
+  {
+    title: "design",
+    skills: [
+      "figma",
+      "adobe photoshop",
+      "canva"
+    ]
+  }
+]
+---
+<section class="relative z-10 max-w-5xl mx-auto my-36">
+  <h2 class="text-slate-200 font-extrabold text-5xl text-center py-2">Skills</h2>
+  <div class="flex justify-between mt-10 max-sm:grid max-sm:grid-cols-2 max-sm:gap-y-10 max-sm:justify-items-center max-[330px]:flex max-[330px]:flex-col max-[330px]:items-center">
+    {
+      skills_info.map(data => <Skills title={data.title} skills={data.skills}></Skills>)
+    }
+  </div>
+</section>
