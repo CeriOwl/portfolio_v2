@@ -49,7 +49,7 @@ const skills_info: Skill[] = [
 ---
 <section class="relative z-10 max-w-5xl mx-auto my-36">
   <h2 class="text-slate-200 font-extrabold text-5xl text-center py-2">Skills</h2>
-  <div class="flex justify-between mt-10 max-sm:grid max-sm:grid-cols-2 max-sm:gap-y-10 max-sm:justify-items-center max-[330px]:flex max-[330px]:flex-col max-[330px]:items-center">
+  <div class="flex justify-between mt-10 max-[1100px]:px-10 max-md:px-10 max-sm:grid max-sm:grid-cols-2 max-sm:gap-y-10 max-sm:justify-items-center max-[330px]:flex max-[330px]:flex-col max-[330px]:items-center max-sm:px-0">
     {
       skills_info.map(data => <Skills title={data.title} skills={data.skills}></Skills>)
     }

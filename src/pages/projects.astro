@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import BackgroundAnimated from "../layouts/Background-animated.astro";
+import AtroposElement from "../components/Atropos_element.astro"
+
+interface Project {
+  title: string,
+  image: string,
+  description: string,
+  url: string,
+  technologies: Array<string>
+}
+
+const projects: Array<Project> = [
+  {
+    title: "Monstercat with Spotify",
+    image: "monster_cat",
+    description: "A copy of a web page of Monstercat but with the possibility to change the album and the info displayed using Spotify's API.",
+    url:"",
+    technologies: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React Js",
+      "Spotify API",
+      "Node Js"
+    ]
+  },
+  {
+    title: "Ableton Copy at detail",
+    image: "ableton",
+    description: "A copy of a webpage of Ableton with all the animations, colors and details.",
+    url:"",
+    technologies: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React Js",
+      "Node Js"
+    ]
+  },
+  {
+    title: "Anime & Manga searcher",
+    image: "anime",
+    description: "A website to get info about the anime or manga searched using an API to get all the info.",
+    url:"",
+    technologies: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Anime API (Kitsu)"
+    ]
+  },
+  {
+    title: "My last portfolio",
+    image: "portfolio",
+    description: "This portfolio is my last project trying and exploring new technologies, designs and colors.",
+    url:"",
+    technologies: [
+      "HTML",
+      "Tailwind",
+      "Typescript",
+      "Astro Js",
+      "Node Js"
+    ]
+  }
+]
+---
+
+<Layout title="Projects">
+  <Header />
+  <main class="relative z-10 mt-10 mb-14 max-w-5xl mx-auto">
+    <h1 class="text-slate-200 font-extrabold text-5xl text-center py-2 leading-tight max-sm:text-4xl max-[430px]:text-2xl max-[280px]:text-xl">Personal Projects</h1>
+    <section class="grid grid-cols-2 gap-8 px-10 py-3 mt-6 max-sm:grid-cols-1">
+      <script>
+        import AtroposComponent from "atropos/element"
+        customElements.define("atropos-component", AtroposComponent)
+      </script>
+      {
+        projects.map(project => <AtroposElement title_project={project.title} image_name={project.image} description={project.description} technologies={project.technologies}></AtroposElement>)
+      }
+    </section>
+  </main>
+  <BackgroundAnimated></BackgroundAnimated>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import TechonologiesProjects from "./Technologies_projects.astro"
+
+interface AtroposElement {
+  title_project: string,
+  image_name: string,
+  description: string,
+  technologies: Array<string>
+}
+
+const { title_project } = Astro.props as AtroposElement
+const { image_name } = Astro.props as AtroposElement
+const { description } = Astro.props as AtroposElement
+const { technologies } = Astro.props as AtroposElement
+---
+<div>
+  <h2 class="font-extralight text-slate-300 mb-2 ml-3 text-lg">{title_project}</h2>
+  <atropos-component class="">
+    <a href="#">
+      <img class="rounded grayscale hover:grayscale-0 active:grayscale-0" src=`/${image_name}.png` />
+    </a>
+  </atropos-component>
+  <p class="text-slate-300 font-extralight mt-5 px-3 text-md">{description}</p>
+  <div class="flex px-3 flex-wrap gap-2 mt-4">
+    {
+      technologies.map(technologie => <TechonologiesProjects technologie_name={technologie}></TechonologiesProjects>)
+    }
+  </div>
+</div>

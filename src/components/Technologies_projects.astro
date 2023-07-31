@@ -1,0 +1,10 @@
+---
+interface Technologie {
+  technologie_name: string
+}
+const { technologie_name } = Astro.props as Technologie
+---
+
+<div class="border-2 rounded-sm px-2">
+  <h3 class="text-slate-50 font-semibold text-xs">{technologie_name}</h3>
+</div>
