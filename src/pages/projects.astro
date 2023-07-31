@@ -78,7 +78,7 @@ const projects: Array<Project> = [
         customElements.define("atropos-component", AtroposComponent)
       </script>
       {
-        projects.map(project => <AtroposElement title_project={project.title} image_name={project.image} description={project.description} technologies={project.technologies}></AtroposElement>)
+        projects.map(project => <AtroposElement title_project={project.title} image_name={project.image} description={project.description} technologies={project.technologies} url={project.url}></AtroposElement>)
       }
     </section>
   </main>
